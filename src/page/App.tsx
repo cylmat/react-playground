@@ -1,7 +1,7 @@
 import { useState } from "react";
-import CssSample from "../components/CssSample";
+import CssSample from "../components/Css/CssSample";
 import Logo from "../components/Logo";
-import Tabs from "../components/Tabs";
+import Tabs from "../components/Tab/Tabs";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "/favicon.svg";
 import "./App.css";

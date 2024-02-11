@@ -1,0 +1,12 @@
+# TUTOS
+@https://openclassrooms.com/fr/courses/7008001-debutez-avec-react
+@https://www.w3schools.com/react/default.asp
+@https://www.tutorialspoint.com/reactjs/index.htm
+https://react.dev/learn/thinking-in-react
+
+## Spé
+@https://blog.logrocket.com/how-to-build-tab-component-react/
+
+### other
+npx create-react-app tab-component-sample
+# ? doesn't works : npx generate-react-cli component Box
