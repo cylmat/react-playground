@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CssSample from "../components/Css/CssSample";
-import Logo from "../components/Logo";
+import Loader from "../components/Loader/Loader.tsx";
+import Logo from "../components/Logo/Logo";
 import Tabs from "../components/Tab/Tabs";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "/favicon.svg";
@@ -30,14 +31,13 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
+      
+      { /*Tabs*/ }
       <Tabs />
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Loader />
+
+      { /*Css*/ }
       <CssSample />
     </>
   );
