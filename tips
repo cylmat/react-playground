@@ -4,6 +4,11 @@
 @https://www.tutorialspoint.com/reactjs/index.htm
 https://react.dev/learn/thinking-in-react
 
+## imports
+import axios from 'axios'
+-> // DONT use "{ axios }" !!
+- The curly braces are used only for import when export is named. If the export is default then curly braces are not used for import. For a default export we do not use { } when we import.
+
 ## Github from replit
 - Use branch backup-replit, main didn't sync
 

@@ -1,5 +1,7 @@
 import { useState } from "react";
+import ApiCall from "../components/Api/ApiCall";
 import CssSample from "../components/Css/CssSample";
+import Generic from "../components/Generic/Generic.tsx";
 import Loader from "../components/Loader/Loader.tsx";
 import Logo from "../components/Logo/Logo";
 import Tabs from "../components/Tab/Tabs";
@@ -16,17 +18,16 @@ function App() {
         <Logo
           href="https://vitejs.dev"
           src={viteLogo}
-          classname="logo"
           alt="Vite logo"
         />
         <Logo
           href="https://react.dev"
           src={reactLogo}
-          classname="logo react"
+          addClassname="react"
           alt="React logo"
         />
       </div>
-      <h1>Vite + React</h1>
+      {/*<h1>Vite + React</h1>*/}
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -34,8 +35,10 @@ function App() {
       </div>
       
       { /*Tabs*/ }
+      <ApiCall />
       <Tabs />
       <Loader />
+      <Generic />
 
       { /*Css*/ }
       <CssSample />
