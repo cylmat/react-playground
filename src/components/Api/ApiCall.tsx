@@ -1,50 +1,88 @@
 import { useEffect, useState, Component } from 'react'
 import AxiosService from '../../service/axiosService'
+import { AxiosResponse } from 'axios'
+import { useQuery } from "react-query"
+// @https://www.npmjs.com/package/dateformat
+import dateformat from "dateformat"
 
-/*
- https://data.opendatasoft.com/api/explore/v2.1/catalog/datasets/tco-bus-circulation-passages-tr@keolis-rennes/records? where=destination%3D%22Chantepie%22&limit=20 
+/**
+ * useQuery
+ * @https://tanstack.com/query/latest/docs/framework/react/overview
+
+sample api
+ - @https://api.github.com/repos/TanStack/query
+
+ - https://data.opendatasoft.com/api/explore/v2.1/catalog/datasets/tco-bus-circulation-passages-tr@keolis-rennes/records? where=destination%3D%22Chantepie%22&limit=20 
+
+ERROR
+- cyclic object value on input click
 */
 
 export default function ApiCall() { //class ApiCall extends Component {
 
   const [res, setRes] = useState<string>('')
+    const [formCityValue, setFormCityValue] = useState<string>('')
 
-  useEffect(() => {
-    let callback = () => { return 'api_t4' }
-    let resa = AxiosService.post(callback)
-    resa.then( (result) => { setRes(result+'') } ) //(result: string) => { setRes(result) }
+  const {isPending, error, data: queryData} = useQuery({
+      queryKey: ['myapidata', formCityValue],
+      queryFn: (query: object) => {
 
-  }, [])
+        return AxiosService
+          .post(query.queryKey[1])
+          .then( (axres) => { return axres } )
+      }
+  }) //-query
 
-
-  return (<div>{res}</div>)
-
-  
-  /*construct() {
-    const [res, setRes] = useState<string>('4')
-
-  }*/
-
-  //public render() {
-    /*const post_url = 'https://data.opendatasoft.com/api/explore/v2.1/catalog/datasets/tco-bus-circulation-passages-tr@keolis-rennes/records?where=destination="Chantepie"&limit=20'*/
-
-    //const [postData, setPostData] = useState()
-
-    /*axios.get(`https://jsonplaceholder.typicode.com/users`)
-        .then(res => {
-          //const persons = res.data;
-          
-
-        }).catch((error)=> {
-      console.log(error);
-
-    }).then( function () {
-      // always executed
-    });  */
-
+    /** Doc @https://handsonreact.com/docs/events */
+    const handleFormValueChange = (val: SyntheticBaseEvent) => {
+        setFormCityValue(val.target.value)
+    }
     
+    if (isPending) return 'Loading...'
+    if (error) return 'An error has occurred: ' + error.message
 
-  //}
+  /*useEffect(() => {
+      if (queryData) {
+          //setRes(queryData)
+      }
+      
+    let res = '' /*AxiosService
+    .post()
+    .then( setRes(JSON.stringify(result))  ) /*callback*
+
+  }, [queryData]) //-effect*/
+console.log(queryData)
+  return (
+        <>
+          <form id="api_form">
+              {/* dont use value=formCityValue, no need */}
+              {isPending && <p>Loading...</p>}
+              City <input 
+                     type="text" 
+                     name="city" 
+                     onChange={handleFormValueChange}
+                />
+
+              <table>
+                  <tr>
+                      <th>Id</th>
+                    <th>Dest</th>
+                    <th>H arrivee</th>
+                      <th>N arrêt</th>
+                  </tr>
+              {queryData && queryData.map((element) => 
+                <tr>
+                    <td>{element['idcourse']}</td>
+                    <td>{element['destination']}</td>
+                    <td>{/** dateformat(element['arrivee'], "H:m") */}</td>
+                    <td>{element['nomarret']}</td>
+                </tr>
+              )}
+                  </table>
+          </form>
+          <div>{/*queryData*/}</div>
+        </>
+  )
   
 }
 

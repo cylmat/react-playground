@@ -1,5 +1,4 @@
-import { useState } from "react";
-import ApiCall from "../components/Api/ApiCall";
+import { useState } from "react"; //@todo move it
 import CssSample from "../components/Css/CssSample";
 import Generic from "../components/Generic/Generic.tsx";
 import Loader from "../components/Loader/Loader.tsx";
@@ -7,7 +6,7 @@ import Logo from "../components/Logo/Logo";
 import Tabs from "../components/Tab/Tabs";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "/favicon.svg";
-import "./App.css";
+import "./Index.css";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -35,7 +34,6 @@ function App() {
       </div>
       
       { /*Tabs*/ }
-      <ApiCall />
       <Tabs />
       <Loader />
       <Generic />
