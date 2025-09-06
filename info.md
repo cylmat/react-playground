@@ -1,5 +1,11 @@
 ## Running React on Repl.it
 
+```
+npm create vite@latest vite-react -- --template react-ts
+npm install
+npm run dev
+```
+
 ### links
 
 ```
@@ -27,28 +33,3 @@ https://plotly.com/javascript/
 @xabikos.javascriptsnippets  
 @mgmcdermott.vscode-language-babel
 
-### render error
-
-```
-setState() change l'état de l'app et déclenche l'appel render(). -> infinite loop
-
-1. Updating the state inside the render
-function App() {
-  const [count, setCount] = useState(0);
-  setCount(1); // infinite loop
-}
--> fix:
-useEffect(() => { setCount(1); }, [])
-
-2. In useEffect with update dependency
-useEffect(() => {
-    setCount(count + 1) // infinite loop
-  }, [count])
--> fix: use functional update
-useEffect(() => {
-    setCount(previousCount => previousCount + 1)
-  }, [])
-
-3. Event handler
-<button onClick={() => setCount(1)}>
-```
