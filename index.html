@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
     <title>Vite + React + TS</title>
+
+    <script src="/jquery.min.js"></script>
+    <script src="/scripts.js"></script>
   </head>
   <body>
+    <div id="menu"></div>
+
     <div style="position: absolute; top: 0; left: 0;">
-      <a href="/index-vanilla.html">Js</a> &nbsp; 
+      <a href="/vanilla.html">Js</a> &nbsp; 
       <a href="/">React</a> &nbsp; 
-      <a href="/index-vue.html">Vue</a>
+      <a href="/vue.html">Vue</a>
     </div>
 
     <div id="root"></div>
-    <script type="module" src="/src/react/main.tsx"></script>
-  </body>
+    <script type="module" src="/src/page/Index.tsx"></script>
+
+    </body>
 </html>
