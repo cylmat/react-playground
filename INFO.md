@@ -1,9 +1,19 @@
-## Running React on Repl.it
+# Running frontend 
+
+## Run
 
 ```shell
-docker run --rm -v .:/app -w /app node:24 npm install
+# run
 docker run --rm -d --name node -v .:/app -w /app -p 5173:5173 node:24 npm run dev
+http://localhost:5173
 ```
+
+```shell
+# update
+docker run --rm -v .:/app -w /app node:24 npm install
+```
+
+## info
 
 ```shell
 npm create vite@latest vite-react -- --template react-ts
@@ -11,7 +21,7 @@ npm install
 npm run dev
 ```
 
-### links
+## links
 
 ```
 https://reactrouter.com/en/main
@@ -32,7 +42,7 @@ https://www.typescriptlang.org/docs/handbook/2/basic-types.html
 https://plotly.com/javascript/
 ```
 
-### vscode ext
+## vscode ext
 
 @lauren.react-pack  
 @xabikos.javascriptsnippets  
