@@ -1,6 +1,11 @@
 ## Running React on Repl.it
 
+```shell
+docker run --rm -d --name node -v .:/app -w /app node:24 npm install
+docker run --rm -d --name node -v .:/app -w /app -p 5173:5173 node:24 npm run dev
 ```
+
+```shell
 npm create vite@latest vite-react -- --template react-ts
 npm install
 npm run dev
