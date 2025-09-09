@@ -1,57 +1,7 @@
-import { useState } from "react"; //@todo move it
-import CssSample from "../components/Custom/Css/CssSample";
-import Generic from "../typescript/Generic";
-import Loader from "../react/components/Loader";
-import Logo from "../components/Custom/Logo/Logo";
-import Tabs from "../components/Custom/Tab/Tabs";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "../../public/favicon.svg";
-
-import React from 'react'
+// import { StrictMode }  from 'react'
+import React  from 'react'
 import ReactDOM from 'react-dom/client'
-
-
-function Index() {
-  const [count, setCount] = useState(0);
-
-  const display_logo = () => {
-      return <div>
-        <Logo
-          href="https://vitejs.dev"
-          src={viteLogo}
-          alt="Vite logo"
-        />
-        <Logo
-          href="https://react.dev"
-          src={reactLogo}
-          addClassname="react"
-          alt="React logo"
-        />
-      </div>
-  }
-
-  return (
-    <>
-      {display_logo()}
-      {/*<h1>Vite + React</h1>*/}
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-
-      React ⚛️ + Vite ⚡ + Replit 🌀
-      
-      { /*Tabs*/ }
-      <Tabs />
-      <Loader />
-      <Generic />
-
-      { /*Css*/ }
-      <CssSample />
-    </>
-  );
-}
+import Index from '../react/Index'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -59,3 +9,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Index />
   </React.StrictMode>
 )
+
+// createRoot(document.getElementById('root')!).render(
+//   <StrictMode>
+//     <App />
+//   </StrictMode>,
+// )
