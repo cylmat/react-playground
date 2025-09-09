@@ -1,11 +1,10 @@
 import { useState } from "react"; //@todo move it
-import CssSample from "../components/Custom/Css/CssSample";
-import Generic from "../typescript/Generic";
+import CssSample from "./components/css/CssSample";
 import Loader from "../react/components/Loader";
-import Logo from "../components/Custom/Logo/Logo";
-import Tabs from "../components/Custom/Tab/Tabs";
+import Logo from "./components/logo/Logo";
+import Tabs from "./components/tab/Tabs";
 import reactLogo from "./assets/react.svg";
-import viteLogo from "../../public/favicon.svg";
+import viteLogo from "./assets/favicon.svg";
 import './index.css'
 
 
@@ -18,6 +17,7 @@ function Index() {
           href="https://vitejs.dev"
           src={viteLogo}
           alt="Vite logo"
+          classname="logo"
         />
         <Logo
           href="https://react.dev"
@@ -43,7 +43,6 @@ function Index() {
       { /*Tabs*/ }
       <Tabs />
       <Loader />
-      <Generic />
 
       { /*Css*/ }
       <CssSample />
