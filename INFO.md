@@ -42,9 +42,14 @@ https://www.typescriptlang.org/docs/handbook/2/basic-types.html
 https://plotly.com/javascript/
 ```
 
-## vscode ext
+## VsCode ext
 
-@lauren.react-pack  
+- js
 @xabikos.javascriptsnippets  
 @mgmcdermott.vscode-language-babel
 
+- react
+@lauren.react-pack 
+
+- vue
+@vue.volar

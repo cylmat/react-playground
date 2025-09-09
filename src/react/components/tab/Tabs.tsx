@@ -1,12 +1,12 @@
-import Tab from "./tab/Tab";
+import Tab from "./Tab";
 
 const Tabs = () => {
   const style = {};
   return (
-    <div style={{ style }}>
+    <div style={ style }>
       <Tab />
     </div>
   );
 };
 
-export default Tabs;
+export default Tabs

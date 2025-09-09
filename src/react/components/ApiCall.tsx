@@ -1,9 +1,7 @@
-import { useEffect, useState, Component } from 'react'
+import { useState } from 'react'
 import AxiosService from '../../service/axiosService'
-import { AxiosResponse } from 'axios'
+// import { AxiosResponse } from 'axios'
 import { useQuery } from "react-query"
-// @https://www.npmjs.com/package/dateformat
-import dateformat from "dateformat"
 
 /**
  * useQuery
@@ -40,17 +38,6 @@ export default function ApiCall() { //class ApiCall extends Component {
     
     if (isPending) return 'Loading...'
     if (error) return 'An error has occurred: ' + error.message
-
-  /*useEffect(() => {
-      if (queryData) {
-          //setRes(queryData)
-      }
-      
-    let res = '' /*AxiosService
-    .post()
-    .then( setRes(JSON.stringify(result))  ) /*callback*
-
-  }, [queryData]) //-effect*/
 
   return (
         <>

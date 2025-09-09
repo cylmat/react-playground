@@ -7,4 +7,4 @@ const Tab = () => {
   );
 };
 
-export default Tab;
+export default Tab

@@ -1,6 +1,6 @@
 import { useState } from "react"; //@todo move it
 import CssSample from "../components/Custom/Css/CssSample";
-import Generic from "../react/components/Generic";
+import Generic from "../typescript/Generic";
 import Loader from "../react/components/Loader";
 import Logo from "../components/Custom/Logo/Logo";
 import Tabs from "../components/Custom/Tab/Tabs";
