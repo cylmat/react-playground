@@ -4,21 +4,30 @@
 
 ```shell
 # run
+# http://localhost:5173
 docker run --rm -d --name groundnode -v .:/app -w /app -p 5173:5173 node:24 npm run dev
-http://localhost:5173
-docker exec -it groundnode bash  
+
+# test
+docker exec -u 1000 -e PLAYWRIGHT_HTML_OUTPUT_DIR=var/playwright-report groundnode npm test
+
+# shell
+docker exec -it -u 1000 groundnode bash
 
 # update
-docker run --rm -v .:/app -w /app node:24 npm install
+docker run --rm -u 1000 -v .:/app -w /app node:24 npm update
 ```
 
 
 ## info
 
 ```shell
+# src
 npm create vite@latest vite-react -- --template react-ts
 npm install
 npm run dev
+
+# tests
+npm init playwright@latest
 ```
 
 ## links
@@ -53,3 +62,7 @@ https://plotly.com/javascript/
 
 - vue
 @vue.volar
+
+- test
+@playwright.playwright
+

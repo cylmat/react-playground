@@ -8,11 +8,13 @@
   "keywords": [],
   "license": "ISC",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
+    "dev": "vite",
+    "jest": "jest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "tscbuild": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "npx playwright test --output var/test-results",
+    "tscbuild": "tsc -b && vite build"
   },
   "dependencies": {
     "@types/node": "^20.14",
@@ -37,6 +39,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9",
+    "@playwright/test": "^1.55",
     "@types/react": "^18.3",
     "@types/react-dom": "^18.3",
     "@types/react-query": "^1.2",
