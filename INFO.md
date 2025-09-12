@@ -4,14 +4,14 @@
 
 ```shell
 # run
-docker run --rm -d --name node -v .:/app -w /app -p 5173:5173 node:24 npm run dev
+docker run --rm -d --name groundnode -v .:/app -w /app -p 5173:5173 node:24 npm run dev
 http://localhost:5173
-```
+docker exec -it groundnode bash  
 
-```shell
 # update
 docker run --rm -v .:/app -w /app node:24 npm install
 ```
+
 
 ## info
 
